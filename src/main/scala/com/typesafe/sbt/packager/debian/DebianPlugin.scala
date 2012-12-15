@@ -39,7 +39,6 @@ trait DebianPlugin extends Plugin with linux.LinuxPlugin {
     name <<= name,
     version <<= version,
     packageArchitecture := "all",
-    maintainer := "",
     debianPackageInfo <<=
       (name, version, maintainer, packageSummary, packageDescription) apply PackageInfo,
     debianPackageMetadata <<= 
