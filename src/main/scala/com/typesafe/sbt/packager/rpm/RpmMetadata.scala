@@ -58,7 +58,8 @@ case class RpmScripts(
     postun: Option[String] = None
     ) {
     def contents(): String = {
-        val labelledScripts = Seq("%pretrans","%pre","%post","%verifyscript","%posttrans","%preun","%postun").zip(Seq(pre, post, preun, postun))
+        val labelledScripts = Seq("%pretrans","%pre","%post","%verifyscript","%posttrans","%preun","%postun")
+                         .zip(Seq(  pretrans,   pre,   post,   verifyscript,   posttrans,   preun,   postun))
         labelledScripts.collect{case (a, Some(b))  => a + "\n" + b} .mkString("\n\n")
     }
 
